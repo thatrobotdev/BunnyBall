@@ -10,8 +10,16 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        PlayerMovement();
+    }
+
+    void PlayerMovement()
+    {
+        // Reads input from the user
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
+
+        // Moves the character on scene
         Vector3 forward = cameraTransform.forward;
         Vector3 right = cameraTransform.right;
         forward.y = 0;

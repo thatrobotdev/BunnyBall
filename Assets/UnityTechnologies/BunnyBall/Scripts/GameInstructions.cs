@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class GameInstructions : MonoBehaviour
 {
+    public string gameInstructions = "Move the player using the W, A, S, and D keys";
+    public string cowbellWarning = "Not enough cowbell!!";
+
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Hello");
-        Debug.LogWarning("Not enough cowbell!!");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log(gameInstructions);
+        Debug.LogWarning(cowbellWarning);
     }
 }
