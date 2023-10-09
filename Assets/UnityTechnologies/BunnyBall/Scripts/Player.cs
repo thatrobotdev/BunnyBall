@@ -6,8 +6,8 @@ public class Player : MonoBehaviour
 {
     public Rigidbody rb;
     public Transform cameraTransform;
-    public GameManager gameManager;
     public byte speed = 5;
+    public FloatingGround floatingground;
 
     void Update()
     {
@@ -32,4 +32,5 @@ public class Player : MonoBehaviour
         rb.AddForce(direction * speed);
     }
 
+  
 }
