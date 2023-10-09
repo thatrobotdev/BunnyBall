@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,6 +23,16 @@ public class GameManager : MonoBehaviour
         player.GetComponent<Player>().enabled = false;
         Destroy(player.GetComponent<Rigidbody>());
         winnerUI.SetActive(true);
-        gameObject.SetActive(false);
+        StartCoroutine(NextLevel());
+
+    }
+
+    IEnumerator NextLevel()
+    {
+        yield return new WaitForSeconds(2);
+        if (SceneManager.GetActiveScene().name == "Level1")
+        {
+            SceneManager.LoadScene("Level2");
+        }
     }
 }
